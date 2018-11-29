@@ -52,7 +52,7 @@ namespace NBug.Examples.WinForms
                         "MyInvalidParameter",
                         new Exception("Test inner exception for argument exception."));
                 case "Background Thread (Task): System.Exception":
-                    Task.Factory.StartNew(() => { throw new Exception(); });
+                    Task.Run(() => { throw new Exception(); });
 
                     // Below code makes sure that exception is thrown as only after finalization, the aggregateexception is thrown.
                     // As a side affect, unlike the normal behavior, the applicaiton will note continue its execution but will shut
