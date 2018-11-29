@@ -51,7 +51,7 @@ namespace NBug.Examples.WPF
 				case "UI Thread: System.ArgumentException":
 					throw new ArgumentException("Selected exception: '" + this.crashTypeComboBox.Text + "' was thrown.", "MyInvalidParameter");
 				case "Background Thread (Task): System.Exception":
-					Task.Run(() => { throw new Exception(); });
+					_ = Task.Run(() => { throw new Exception(); });
 
 					// Below code makes sure that exception is thrown as only after finalization, the aggregateexception is thrown.
 					// As a side affect, unlike the normal behavior, the applicaiton will note continue its execution but will shut
