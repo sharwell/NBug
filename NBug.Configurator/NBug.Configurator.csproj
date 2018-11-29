@@ -207,8 +207,4 @@
     <Folder Include="SubmitPanels\Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName)==Release copy "$(TargetPath)" "$(SolutionDir)packages\NBug\tools" /Y
-if $(ConfigurationName)==Release copy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)packages\NBug\tools" /Y</PostBuildEvent>
-  </PropertyGroup>
 </Project>
